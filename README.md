@@ -1,4 +1,4 @@
-# React Project for the React Course
+**!The Todo App. This application allows you to add and remove various tasks added by the user!**
 
 ## Available Scripts
 
