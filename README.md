@@ -1,4 +1,4 @@
-**!The Todo App. This application allows you to add and remove various tasks added by the user!**
+#**!The Todo App. This application allows you to add and remove various tasks added by the user!**
 
 ## Available Scripts
 
