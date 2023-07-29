@@ -1,0 +1,20 @@
+﻿.input {
+  font-size: 30px;
+  border-radius: 7px;
+  padding: 10px;
+}
+.button {
+  font-size: 30px;
+  margin: 20px;
+  border-radius: 7px;
+  padding: 15px;
+  color:aliceblue;
+  background-color: rgba(0, 255, 98, 0.377);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.div {
+  margin: 20px auto;
+}

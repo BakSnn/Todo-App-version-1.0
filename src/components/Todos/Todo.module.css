@@ -1,0 +1,27 @@
+﻿.h1 {
+  color: beige;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 15px auto;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: 2px solid rgb(70, 61, 61);
+  color: rgb(2, 57, 94);
+  background-color: aliceblue;
+  max-width: 50%;
+}
+
+.todoText {
+  width: 100%;
+  text-align: left;
+}
+
+.todoIcon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: rgb(255, 210, 11);
+}
