@@ -1,26 +1,20 @@
-import Todo from './Todo'
-import styles from './TodoList.module.css'
-function TodoList({ todos, deleteTodo, toggleTodo, countCompleted }) {
+import Todo from "./Todo";
+import styles from "./TodoList.module.css";
+function TodoList({ todos, deleteTodo }) {
   return (
     <div className={styles.todoListContainer}>
       {!todos.length && <h2>Todo list is empty...</h2>}
-      {todos.map((todo) => (
+      {todos.map((todo, index) => (
         <Todo
-          key={todo.id}
+          key={index}
           todo={todo}
+          todos={todos}
           deleteTodo={deleteTodo}
-          toggleTodo={toggleTodo}
+          index={index}
         />
       ))}
-      <div className={styles.completedTodos}>
-        {countCompleted > 0 && (
-          <h2>{`You have completed ${countCompleted} ${
-            countCompleted > 1 ? 'todos' : 'todo'
-          }`}</h2>
-        )}
-      </div>
     </div>
-  )
+  );
 }
 
-export default TodoList
+export default TodoList;
