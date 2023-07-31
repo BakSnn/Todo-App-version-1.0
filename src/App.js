@@ -1,62 +1,25 @@
-import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import { useState } from "react";
+import "./App.css";
 
-import './App.css'
-import TodoForm from './components/Todos/TodoForm'
-import TodoList from './components/Todos/TodoList'
-import TodosActions from './components/Todos/TodosActions'
+import TodoForm from "./components/Todos/TodoForm";
+import TodoList from "./components/Todos/TodoList";
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todo, setTodo] = useState([]);
 
   const addTodoHandler = (text) => {
-    const newTodo = {
-      text: text,
-      isCompleted: false,
-      id: uuidv4(),
-    }
-    setTodos([...todos, newTodo])
-  }
-  const deleteTodoHandler = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id))
-  }
-
-  const toggleTodoHandler = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id
-          ? { ...todo, isCompleted: !todo.isCompleted }
-          : { ...todo }
-      )
-    )
-  }
-  const resetTodosHandler = () => {
-    setTodos([])
-  }
-  const deleteCompletedTodosHandler = () => {
-    setTodos(todos.filter((todo) => !todo.isCompleted))
-  }
-  const completedTodosCount = todos.filter((todo) => todo.isCompleted).length
-
+    setTodo([...todo, text]);
+  };
+  const deleteTodoHandler = (index) => {
+    setTodo(todo.filter((_, idx) => idx !== index));
+  };
   return (
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler}></TodoForm>
-      <TodosActions
-        todos={todos}
-        resetTodos={resetTodosHandler}
-        deleteCompletedTodos={deleteCompletedTodosHandler}
-        completedTodosCount={!!completedTodosCount}
-      />
-      <TodoList
-        todos={todos}
-        deleteTodo={deleteTodoHandler}
-        id={todos.id}
-        toggleTodo={toggleTodoHandler}
-        countCompleted={completedTodosCount}
-      ></TodoList>
+      <TodoList todos={todo} deleteTodo = {deleteTodoHandler}></TodoList>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
