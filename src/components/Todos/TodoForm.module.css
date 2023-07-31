@@ -1,20 +1,19 @@
-﻿.input {
-  font-size: 30px;
-  border-radius: 7px;
-  padding: 10px;
+﻿.todoFormContainer {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  width: 50%;
 }
-.button {
-  font-size: 30px;
-  margin: 20px;
-  border-radius: 7px;
-  padding: 15px;
-  color:aliceblue;
-  background-color: rgba(0, 255, 98, 0.377);
-  text-decoration: none;
+.todoFormContainer form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todoFormContainer input {
+  width: 45%;
+  height: 30px;
+  font-size: 1.3rem;
+  padding: 10px 15px;
   border: none;
-  cursor: pointer;
-}
-
-.div {
-  margin: 20px auto;
+  border-radius: 5px;
 }
