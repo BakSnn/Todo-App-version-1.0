@@ -1,29 +1,31 @@
-import { useState } from "react";
-import styles from "./TodoForm.module.css";
+import { useState } from 'react'
+import styles from './TodoForm.module.css'
+import Button from '../UI/Button'
 function TodoForm({ addTodo }) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('')
 
   const onSubmitHandler = (event) => {
-    event.preventDefault();
-    if (text.trim() !== "") {
-      addTodo(text);
-      setText("");
+    event.preventDefault()
+    if (text.trim() !== '') {
+      addTodo(text)
+      setText('')
     }
-  };
+  }
 
   return (
-    <div className={styles.div}>
+    <div className={styles.todoFormContainer}>
       <form onSubmit={onSubmitHandler}>
         <input
-          className={styles.input}
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter the todo"
         ></input>
-        <button className={styles.button}>Submit</button>
+        <Button type="submit" title="Submit">
+          Submit
+        </Button>
       </form>
     </div>
-  );
+  )
 }
 
-export default TodoForm;
+export default TodoForm
